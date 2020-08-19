@@ -1,0 +1,462 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* //defines what is 1rem */
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+:root {
+  --bp-largest: 75em; /*1200px */
+  --bp-largest: 75em; /*1200px */
+  --bp-largest: 75em; /*1200px */
+}
+
+/*++++++++++++++++++++++++++++ HEADER TITLE++++++++++++++++++++++++++ */
+.header {
+  background-image: linear-gradient(to right bottom, #008f68, #07684e);
+  clip-path: polygon(0 0, 100% 0, 100% 200px, 0 100%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: transparent;
+  -webkit-background-clip: text;
+  margin: 5px;
+  padding: 5px 10px;
+  transition: all 0.2s;
+  font-size: 4rem;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+}
+.header:hover {
+  transform: skewY(10deg) skewX(5deg);
+}
+
+/*++++++++++++++++++++++++++++ HEADER TITLE++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++++++++ FORM AND INPUT++++++++++++++++++++++++++ */
+
+input {
+  border: none;
+  padding: 0.5rem;
+  width: 30.0rem;
+  transform: all 0.2s;
+  animation-name: moveIn;
+  animation-duration: 3s;
+  border-bottom: 3px solid transparent;
+  margin-top: 2rem;
+ transition: all 2s ease-in;
+}
+input:focus {
+  outline: none;
+  text-transform: uppercase;
+  background-color: white;
+  color: #777;
+
+  border-bottom: 3px solid royalblue;
+}
+
+input:invalid {
+  border-bottom: 3px solid darkred;
+}
+
+input:focus:invalid::-webkit-input-placeholder {
+  color: darkgray;
+}
+
+input:hover {
+  transform: translateY(-3px) translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+input:active {
+  transform: translateY(-1px) translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+
+  animation: moveInBlink 5s infinite;
+}
+
+input:placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__group__title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  animation-name: moveIn;
+  animation-duration: 3s;
+}
+.colorLength {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.9rem;
+  animation-name: moveIn;
+  animation-duration: 3s;
+}
+
+/*++++++++++++++++++++++++++++ FORM AND INPUT++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++++++++ SUGGESTION BOX++++++++++++++++++++++++++ */
+.no-suggestions {
+  color: #999;
+  padding: 0.5rem;
+}
+
+.suggestions {
+  position: relative;
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  /* max-height: 143px; */
+
+  padding-left: 0;
+  width: calc(28.4rem + 1rem);
+  height: 12em;
+  overflow-y: auto;
+  animation-name: moveIn;
+  animation-duration: 3s;
+}
+.suggestions::-webkit-scrollbar {
+  width: 2em;
+}
+.suggestions::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(226, 222, 222);
+}
+ 
+.suggestions::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 151, 45, 0.287);
+  outline: 1px solid rgb(23, 118, 214);
+}
+
+.suggestions li {
+  overflow: hidden;
+  padding: 0.5rem;
+  font-size: 2rem;
+  overflow: none;
+  position: relative;
+  transition: all 1s ease-in;
+  font-weight: 300;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+  background-color: #008f694f;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+/*++++++++++++++++++++++++++++ SUGGESTION BOX++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++++++++ MAIN CONTAINER++++++++++++++++++++++++++ */
+.main {
+  height: auto;
+  background-image: linear-gradient(
+    rgba(251, 249, 249, 0.191),
+    rgba(0, 0, 0, 0.109)
+  );
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*++++++++++++++++++++++++++++ MAIN CONTAINER++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++++++++CONTENT++++++++++++++++++++++++++ */
+.content {
+  height: auto;
+  margin: auto 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+}
+
+.content__items {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 2px;
+  flex: 1 0 10%;
+  margin: 4rem auto;
+  padding: .5rem 1rem;
+}
+
+.content__text {
+  padding: 5px;
+  align-items: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 2rem;
+  color: white;
+}
+
+/*++++++++++++++++++++++++++++CONTENT++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++++++++PUSH KEY INSTRUCTIONS++++++++++++++++++++++++++ */
+.pushKeys {
+  font-size: 0.8rem;
+  background-color: black;
+  color: whitesmoke;
+  width: 17%;
+  padding: 5px;
+  animation-name: moveIn;
+  animation-duration: 3s;
+}
+
+.pushKeys:hover {
+  transform: translateY(-3px) translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*++++++++++++++++++++++++++++PUSH KEY INSTRUCTIONS++++++++++++++++++++++++++ */
+
+
+
+
+/************** animations******************* */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(0);
+  }
+
+  80% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(100px);
+  }
+
+  80% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) translateY(0);
+  }
+}
+
+@keyframes moveInBlink {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.3;
+    transform: translateX(0) translateY(3px);
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.6;
+    transform: translateX(0) translateY(-3px);
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+@keyframes FadeOut {
+  0% {
+    opacity: 0;
+    color: #008f68;
+    transform: translateX(150px) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/************** animations******************* */
+
+
+
+
+
+/************** media******************* */
+@media only screen and (max-width: 90em) {
+  .pushKeys {
+    font-size: 1rem;
+    width: 23%;
+    margin: auto 1rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  .suggestions {
+    font-size: 1rem;
+
+    width: calc(45rem + 1rem);
+  }
+}
+
+/* 361px */
+@media only screen and (max-width: 26.25em) {
+  input {
+    width: 26rem;
+  }
+  .content__items {
+    margin: 2rem;
+  }
+
+  .suggestions {
+    font-size: 0.9rem;
+
+    width: calc(250px + 1rem);
+  }
+}
+
+/* 394px */
+@media only screen and (max-width: 24.625em) {
+  .header {
+    font-size: 2rem;
+  }
+  .pushKeys {
+    font-size: 0.9rem;
+    width: 23%;
+    margin: auto 1rem;
+  }
+
+  .suggestions {
+    font-size: 0.9rem;
+    height: 14.5em;
+  }
+  .suggestions li {
+    font-size: 0.9rem;
+  }
+}
+
+/* 364px */
+@media only screen and (max-width: 22.75em) {
+  input {
+    width: 26rem;
+  }
+  .content__items {
+    margin: 2rem;
+  }
+
+  .suggestions {
+    font-size: 0.9rem;
+
+    width: calc(250px + 1rem);
+  }
+}
+
+/* 361px */
+@media only screen and (max-width: 22.5625em) {
+  input {
+    width: 26rem;
+  }
+  .content__items {
+    margin: 2rem;
+  }
+
+  .suggestions {
+    font-size: 0.9rem;
+
+    width: calc(250px + 1rem);
+  }
+}
+
+/* 320px */
+@media only screen and (max-width: 20em) {
+  input {
+    width: 22rem;
+  }
+  .content__items {
+    margin: 2rem;
+  }
+
+  .suggestions {
+    font-size: 0.9rem;
+
+    width: calc(210px + 1rem);
+  }
+
+  .pushKeys {
+    font-size: 0.9rem;
+    width: 25%;
+    margin: auto 1rem;
+  }
+  .colorLength {
+    font-size: 0.9rem;
+  }
+}
+  /************** media******************* */
